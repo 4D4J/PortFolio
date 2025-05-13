@@ -10,6 +10,9 @@
   background-color: #101113;
   font-family: Hack, sans-serif;
 }
+.custom-text-size {
+  font-size: 10px;
+}
 
 .logo {
   height: 6em;

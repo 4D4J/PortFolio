@@ -8,6 +8,14 @@ const StyledCard = styled.div`
     width: 300px;
   }
 
+  @media (max-width: 640px) {
+    .card {
+      width: 240px;
+      height: 80px;
+      justify-content: space-between;
+    }
+  }
+
   .card svg {
     position: absolute;
     display: flex;
@@ -31,6 +39,15 @@ const StyledCard = styled.div`
     text-decoration: none;
     transition: 0.25s;
     border-radius: 50px;
+  }
+
+  @media (max-width: 640px) {
+    .card .social-link1,
+    .card .social-link2,
+    .card .social-link3 {
+      width: 50px !important;
+      height: 50px !important;
+    }
   }
 
   .card svg {
