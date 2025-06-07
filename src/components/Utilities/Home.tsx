@@ -6,47 +6,53 @@ function Home(){
   
     return (
         <div className="flex flex-col items-center justify-center h-full w-full">
-
             <div>
                 <StyledShining>
-                    <p>Welcome to my PorteFolio: <br/><a href="https://github.com/4D4J" target='_blank'>github.com/4D4J</a></p>
+                    <p>Welcome to my PorteFolio</p><p className="custom-text-size text-[15px]">I'm Nathan aka Rapido</p>
                 </StyledShining>
             </div>
-
         </div>
     )
 }
 
 const StyledShining = styled.div`
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-size: 24px;
-    }
-
     p {
         font-weight: 700;
         text-align: center;
         font-size: 40px;
         font-family: Hack, sans-serif;
         text-transform: uppercase;
-        background: linear-gradient(90deg, #000, #fff, #000);
+        color: #fff;
         letter-spacing: 5px;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-repeat: no-repeat;
-        background-size: 80%;
-        animation: shine 6s linear infinite;
         position: relative;
+        animation: fadeIn 2s ease-in-out 1s forwards;
     }
 
-    @keyframes shine {
+    p.custom-text-size {
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin-top: 5px;
+        animation: fadeIn 3s ease-in-out 1s forwards;
+    }
+
+    @keyframes fadeIn {
         0% {
-            background-position-x: -500%;
+            opacity: 0;
         }
         100% {
-            background-position-x: 500%;
+            opacity: 1;
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
         }
     }
 
