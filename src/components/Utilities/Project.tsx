@@ -45,8 +45,8 @@ const Project = () => {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center p-4 sm:p-8">
-      <div className="mb-5 text-center sm:text-left">
-        <h2 className='text-lg'>Check out my latest projects :</h2>
+      <div className="mb-5 flex flex-col items-center justify-center sm:text-left">
+        <h2 className='text-lg'>Check out my latest projects</h2>
         <p className='text-xs'>Press Space to change project</p>
       </div>
       <div className='w-full h-[280px] md:h-[400px] flex flex-col items-center justify-around'>

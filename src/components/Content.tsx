@@ -3,10 +3,37 @@ import Home from './Utilities/Home';
 import Me from './Utilities/Me';
 import Project from './Utilities/Project';
 import Contact from './Utilities/Contact';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+const WriteUpButton = styled.button`
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 10;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+    padding: 0.4em 0.8em;
+  }
+`;
 
 function Content() {
   const [content, setContent] = useState('home');
-
+  const navigate = useNavigate();
 
   const [profileImage, setProfileImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -31,8 +58,15 @@ function Content() {
       fetchProfileImage();
     }, []);
 
+  const goToWriteUps = () => {
+    navigate('/writeups');
+  };
+
   return (
     <div className="flex flex-col min-h-screen w-full overflow-y-auto items-center justify-center">
+      <WriteUpButton onClick={goToWriteUps}>
+        Voir mes Write-ups
+      </WriteUpButton>
       
       <div className='h-auto max-h-full md:h-[40em] w-full md:w-[65em] max-w-[100vw] px-4 sm:px-0'>
         
