@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import Modal from 'react-modal';
 
+
 const Project = () => {
   const ProjectName = ['MindMapper', 'Muzikae', 'BS Studio', 'Linux Helper'];
   const ProjectVideo = ['vid_mindmapper.mp4', 'vid_muzikae.mp4', 'vid_bsstudio.mp4', 'vid_linuxhelper.mp4'];
