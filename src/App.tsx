@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Content from './components/Content';
 import NotFound from './components/Utilities/404';
 import WriteUp_page from './components/WriteUp/WriteUp_page';
-import LegalNotice from './components/Utilities/LegalNotice';
-import PrivacyPolicy from './components/Utilities/PrivacyPolicy';
-import TermsOfService from './components/Utilities/TermsOfService';
-import LegalNoticeEN from './components/Utilities/LegalNoticeEN';
-import PrivacyPolicyEN from './components/Utilities/PrivacyPolicyEN';
-import TermsOfServiceEN from './components/Utilities/TermsOfServiceEN';
+import LegalNotice from './components/legal/LegalNotice';
+import PrivacyPolicy from './components/legal/PrivacyPolicy';
+import TermsOfService from './components/legal/TermsOfService';
+import LegalNoticeEN from './components/legal/LegalNoticeEN';
+import PrivacyPolicyEN from './components/legal/PrivacyPolicyEN';
+import TermsOfServiceEN from './components/legal/TermsOfServiceEN';
 
 
 function App() {
