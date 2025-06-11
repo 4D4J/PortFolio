@@ -8,7 +8,7 @@ function Home(){
         <div className="flex flex-col items-center justify-center h-full w-full">
             <div>
                 <StyledShining>
-                    <p>Welcome to my PorteFolio</p><p className="custom-text-size text-[15px]">I'm Nathan aka Rapido</p>
+                    <p>Welcome to my Portfolio</p><p className="custom-text-size text-[15px]">I'm Nathan aka Rapido</p>
                 </StyledShining>
             </div>
         </div>

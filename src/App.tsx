@@ -3,6 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Content from './components/Content';
 import NotFound from './components/Utilities/404';
 import WriteUp_page from './components/WriteUp/WriteUp_page';
+import LegalNotice from './components/Utilities/LegalNotice';
+import PrivacyPolicy from './components/Utilities/PrivacyPolicy';
+import TermsOfService from './components/Utilities/TermsOfService';
+import LegalNoticeEN from './components/Utilities/LegalNoticeEN';
+import PrivacyPolicyEN from './components/Utilities/PrivacyPolicyEN';
+import TermsOfServiceEN from './components/Utilities/TermsOfServiceEN';
 
 
 function App() {
@@ -13,6 +19,17 @@ function App() {
       <Routes>
         <Route path="" element={<Content/>} />
         <Route path="/writeups" element={<WriteUp_page/>} />
+        
+        {/* French Legal Pages */}
+        <Route path="/legal-notice" element={<LegalNotice/>} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+        <Route path="/terms-of-service" element={<TermsOfService/>} />
+        
+        {/* English Legal Pages */}
+        <Route path="/en/legal-notice" element={<LegalNoticeEN/>} />
+        <Route path="/en/privacy-policy" element={<PrivacyPolicyEN/>} />
+        <Route path="/en/terms-of-service" element={<TermsOfServiceEN/>} />
+        
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </div>
