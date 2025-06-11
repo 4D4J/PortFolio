@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import Card_Contact from "../UI/card_contact";
 
 interface FormData {
+  name: string;
   email: string;
   subject: string;
   message: string;
@@ -14,8 +15,8 @@ interface FormStatus {
   error: string;
 }
 
-function Contact() {
-  const [formData, setFormData] = useState<FormData>({
+function Contact() {  const [formData, setFormData] = useState<FormData>({
+    name: '',
     email: '',
     subject: '',
     message: ''
@@ -39,8 +40,12 @@ function Contact() {
       setStatus(prev => ({ ...prev, error: '', success: false }));
     }
   };
-
   const validateForm = (): boolean => {
+    if (!formData.name.trim()) {
+      setStatus(prev => ({ ...prev, error: 'Name is required' }));
+      return false;
+    }
+    
     if (!formData.email.trim()) {
       setStatus(prev => ({ ...prev, error: 'Email is required' }));
       return false;
@@ -80,21 +85,19 @@ function Contact() {
       if (!serviceId || !templateId || !publicKey) {
         throw new Error('EmailJS configuration is missing. Please check your environment variables.');
       }
-      
-      const templateParams = {
-        from_email: formData.email,
-        to_email: 'nathan.auvray60@gmail.com',
-        subject: formData.subject,
-        message: formData.message,
-        from_name: formData.email // You might want to add a name field later
+        const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        title: formData.subject,
+        message: formData.message
       };
       
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
       
       setStatus({ loading: false, success: true, error: '' });
-      
-      // Reset form after successful submission
+        // Reset form after successful submission
       setFormData({
+        name: '',
         email: '',
         subject: '',
         message: ''
@@ -113,9 +116,19 @@ function Contact() {
       <div className="flex flex-col items-center sm:text-left mb-6 sm:mb-4">
         <h1 className="text-xl sm:text-2xl mb-2 sm:mb-4">Contact Me Right now 🚀</h1>
       </div>
-      
-      <div className="w-[20rem] min-w-[10rem]">
+        <div className="w-[20rem] min-w-[10rem]">
         <form className="w-full mb-8" onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <input 
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Your name"
+              className="w-[15rem] p-2 rounded bg-zinc-800 border border-gray-700 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
           <div className="mb-4">
             <input 
               type="email"
