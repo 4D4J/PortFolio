@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@types/styled-components": "^5.1.34",
+    "@vercel/analytics": "^1.5.0",
     "aos": "^2.3.4",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
