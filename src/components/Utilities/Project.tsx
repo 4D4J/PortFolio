@@ -55,12 +55,19 @@ const Project = () => {
           className="w-auto flex flex-row items-center justify-center mb-2.5 cursor-pointer" 
           onClick={openModal}
         >
-          <p className=''>{ProjectName[num_title]}</p>
-          <img 
-            src="/src/assets/info_icon.svg" 
-            alt="Info" 
-            className="ml-2 w-5 md:w-auto" 
-          />
+          <p className="text-base font-medium">{ProjectName[num_title]}</p>
+          <svg 
+            className="ml-2 w-5 h-5 md:w-6 md:h-6" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="11" y1="8" x2="13" y2="8"></line>
+          </svg>
         </div>
         <div className="w-full h-[220px] md:h-[400px]">
           <video 
