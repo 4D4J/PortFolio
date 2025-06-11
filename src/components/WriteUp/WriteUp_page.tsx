@@ -15,7 +15,7 @@ import change_jwt_payload_rr from '../img/img_rainbowrocket/change_jwt_payload.p
 import get_flag_rr from '../img/img_rainbowrocket/get_flag.png';
 import log_burp_suite_rr from '../img/img_rainbowrocket/img connexion burp suite.png';
 import img1_rr from '../img/img_rainbowrocket/img1.png';
-import JWt_analyse_rr from '../img/img_rainbowrocket/JWT_analyse.png';
+import JWT_analyse_rr from '../img/img_rainbowrocket/JWT_analyse.png';
 import register_img_rr from '../img/img_rainbowrocket/register_img.png';
 
 
@@ -32,14 +32,20 @@ const WriteUp_page = () => {
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set());
 
   const navigate = useNavigate();
-
   // Fonction pour remplacer les références d'images dans le markdown
   const processMarkdown = (content: string) => {
     return content
+      // Images chessgame (format standard markdown)
       .replace(/!\[first img\]\(\.\.\/\.\.\/\.\.\/img\/img_chessgame\/First_Screen_ChessGame\.png\)/g, '![first img](/first-screen)')
       .replace(/!\[seconde img\]\(\.\.\/\.\.\/\.\.\/img\/img_chessgame\/Seconde_Screen_ChessGame\.png\)/g, '![seconde img](/seconde-screen)')
       .replace(/!\[third img\]\(\.\.\/\.\.\/\.\.\/img\/img_chessgame\/Third_Screen_ChessGame\.png\)/g, '![third img](/third-screen)')
-      .replace(/!\[third img\]\(\.\.\/\.\.\/\.\.\/img\/img_chessgame\/Third_Screen_ChessGame\.png\)/g, '')
+      
+      // Images rainbowrocket (format Obsidian [[]])
+      .replace(/!\[\[register_img\.png\]\]/g, '![register_img](/register_img_rr)')
+      .replace(/!\[\[img connexion burp suite\.png\]\]/g, '![img connexion burp suite](/log_burp_suite)')
+      .replace(/!\[\[JWT_analyse\.png\]\]/g, '![JWT_analyse](/jwt_analyse)')
+      .replace(/!\[\[change_jwt_payload\.png\]\]/g, '![change_jwt_payload](/change_jwt_payload)')
+      .replace(/!\[\[get_flag\.png\]\]/g, '![get_flag](/get_flag)');
   };
 
   useEffect(() => {
@@ -145,6 +151,14 @@ const WriteUp_page = () => {
     if (src === '/first-screen') return firstScreenImg;
     if (src === '/seconde-screen') return secondeScreenImg;
     if (src === '/third-screen') return thirdScreenImg;
+
+    if( src === '/change_jwt_payload') return change_jwt_payload_rr;
+    if( src === '/get_flag') return get_flag_rr;
+    if( src === '/log_burp_suite') return log_burp_suite_rr;
+    if( src === '/img1_rr') return img1_rr;
+    if( src === '/jwt_analyse') return JWT_analyse_rr;
+    if( src === '/register_img_rr') return register_img_rr;
+
     return src;
   };
 
