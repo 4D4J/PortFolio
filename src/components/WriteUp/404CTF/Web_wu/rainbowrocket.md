@@ -31,7 +31,7 @@ The main page show
 ```
 You need to be admin to show this page 
 ```
-So, instinctively i change Rapdio1234 by Admin
+So, instinctively i change Rapido1234 by Admin
 
 ![[change_jwt_payload.png]]
 
