@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import Modal from 'react-modal';
 
 
+
 const Project = () => {
   const ProjectName = ['MindMapper', 'Muzikae', 'BS Studio', 'Linux Helper'];
   const ProjectVideo = ['vid_mindmapper.mp4', 'vid_muzikae.mp4', 'vid_bsstudio.mp4', 'vid_linuxhelper.mp4'];
@@ -25,34 +26,48 @@ const Project = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-  };
+  };  useEffect(() => {
+    const changeProject = () => {
+      setNumText((prev) => (prev + 1) % ProjectText.length);
+      setNumTitle((prev) => (prev + 1) % ProjectName.length);
+      setNumVideo((prev) => (prev + 1) % ProjectVideo.length);
+    };
 
-  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' || e.key === ' ') {
-        setNumText((prev) => (prev + 1) % ProjectText.length);
-        setNumTitle((prev) => (prev + 1) % ProjectName.length);
-        setNumVideo((prev) => (prev + 1) % ProjectVideo.length);
+        changeProject();
       }
     };
 
+    const handleTouchStart = (e: TouchEvent) => {
+      // Éviter le changement si on touche la modal ou le bouton d'info
+      const target = e.target as HTMLElement;
+      if (target.closest('.modal-content') || target.closest('.info-button')) {
+        return;
+      }
+      changeProject();
+    };
 
+    // Écouter les deux types d'événements sur tous les appareils
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('touchstart', handleTouchStart);
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('touchstart', handleTouchStart);
     };
-  }, []);
+  }, [ProjectText.length, ProjectName.length, ProjectVideo.length]);
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center p-4 sm:p-8">
+            
       <div className="mb-5 flex flex-col items-center justify-center sm:text-left">
         <h2 className='text-lg'>Check out my latest projects</h2>
-        <p className='text-xs'>Press Space to change project</p>
+        <p className='text-xs'>Press Space or tap screen to change project</p>
       </div>
-      <div className='w-full h-[280px] md:h-[400px] flex flex-col items-center justify-around'>
+      <div className='w-full h-[280px] md:h-[400px] flex flex-col items-center justify-around'>        
         <div 
-          className="w-auto flex flex-row items-center justify-center mb-2.5 cursor-pointer" 
+          className="w-auto flex flex-row items-center justify-center mb-2.5 cursor-pointer info-button" 
           onClick={openModal}
         >
           <p className="text-base font-medium">{ProjectName[num_title]}</p>
@@ -85,8 +100,8 @@ const Project = () => {
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 outline-none cursor-default max-w-[92%] md:max-w-md"
         overlayClassName="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 cursor-pointer"
         ariaHideApp={false}
-      >
-        <div className='p-4 md:p-6 rounded-lg w-full mx-auto bg-black bg-opacity-80'>
+      >        
+        <div className='p-4 md:p-6 rounded-lg w-full mx-auto bg-black bg-opacity-80 modal-content'>
           <h2 className='text-white text-lg md:text-xl mb-2 md:mb-4'>{ProjectName[num_title]}</h2>
           <p className='text-sm md:text-base'>
             {ProjectText[num_text]}
@@ -96,5 +111,6 @@ const Project = () => {
     </div>
   );
 }
+
 
 export default Project;
