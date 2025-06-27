@@ -49,7 +49,6 @@ const WriteUp_page = () => {
   };
 
   useEffect(() => {
-    // Structure statique basée sur vos fichiers existants
     const structure = [
       {
         name: '404CTF',
@@ -76,7 +75,6 @@ const WriteUp_page = () => {
     ];
     setFileStructure(structure);
     
-    // Développer par défaut le dossier 404CTF
     setExpandedFolders(new Set(['/404CTF']));
   }, []);
 
