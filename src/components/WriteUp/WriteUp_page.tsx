@@ -40,7 +40,7 @@ const WriteUp_page = () => {
       .replace(/!\[seconde img\]\(\.\.\/\.\.\/\.\.\/img\/img_chessgame\/Seconde_Screen_ChessGame\.png\)/g, '![seconde img](/seconde-screen)')
       .replace(/!\[third img\]\(\.\.\/\.\.\/\.\.\/img\/img_chessgame\/Third_Screen_ChessGame\.png\)/g, '![third img](/third-screen)')
       
-      // Images rainbowrocket (format Obsidian [[]])
+      // Images rainbowrocket
       .replace(/!\[\[register_img\.png\]\]/g, '![register_img](/register_img_rr)')
       .replace(/!\[\[img connexion burp suite\.png\]\]/g, '![img connexion burp suite](/log_burp_suite)')
       .replace(/!\[\[JWT_analyse\.png\]\]/g, '![JWT_analyse](/jwt_analyse)')
@@ -49,7 +49,6 @@ const WriteUp_page = () => {
   };
 
   useEffect(() => {
-    // Structure statique basée sur vos fichiers existants
     const structure = [
       {
         name: '404CTF',
@@ -70,18 +69,12 @@ const WriteUp_page = () => {
                 content: rainbowrocketMd
               }
             ]
-          },
-          {
-            name: 'Osint_wu',
-            type: 'folder' as const,
-            children: []
           }
         ]
       }
     ];
     setFileStructure(structure);
     
-    // Développer par défaut le dossier 404CTF
     setExpandedFolders(new Set(['/404CTF']));
   }, []);
 
