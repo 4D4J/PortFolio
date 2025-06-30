@@ -35,7 +35,6 @@ function Contact() {  const [formData, setFormData] = useState<FormData>({
       [name]: value
     }));
     
-    // Clear any previous error/success messages when user starts typing
     if (status.error || status.success) {
       setStatus(prev => ({ ...prev, error: '', success: false }));
     }

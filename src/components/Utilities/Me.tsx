@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
 
 function Me(){
   return (
@@ -13,13 +11,12 @@ function Me(){
             <li className="text-sm sm:text-lg">
               <span className="font-semibold">Skills:</span>
               <ul className="list-disc list-inside ml-3 sm:ml-6 space-y-1">
-                <li>Programming languages: Web language (favorite), Python, JavaScript, C, etc. ‎  
+                <li>Programming languages: Web language, Python, JavaScript, Java, C/C++ and many more etc. ‎  
                   <i className="devicon-html5-plain colored"> </i>
                   <i className="devicon-python-plain colored"> </i>
                   <i className="devicon-javascript-plain colored"> </i>
                 </li>
-                <li>Cybersecurity Skills: Web pentesting, Osint, Social Engineering. ‎ 
-                  <FontAwesomeIcon icon={faMicrochip} />
+                <li>Cybersecurity Skills: Web pentesting, Osint, Forensic. ‎ 
                 </li>
                 <li>Web development and UI/UX using modern frameworks. ‎ 
                   <i className="devicon-react-original colored"></i>
