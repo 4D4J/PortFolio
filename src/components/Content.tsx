@@ -71,41 +71,44 @@ function Content() {
       <div className='h-auto max-h-full md:h-[40em] w-full md:w-[65em] max-w-[100vw] px-4 sm:px-0'>
         
       <div className='flex flex-col md:flex-row md:h-[4em] w-full md:items-center justify-between pb-2 md:pb-[4em]'>
-        <div className='flex flex-col md:flex-row md:w-[42.5em] justify-between'>
-          <div className='h-[3em] md:h-[4em] md:w-[15.5em] flex items-center justify-center md:justify-evenly'>
-            <p className='text-xl cursor-pointer hover:animate-[wiggle_0.30s_ease-in-out_infinite] ' onClick={() => setContent('home')}>Hello👋!</p>
-            <hr className='hidden md:block border-white w-[4em] rotate-90'/>
+        {/* Navbar commune avec tous les éléments */}
+        <div className='flex flex-col md:flex-row w-full md:items-center justify-between'>
+          {/* Hello à gauche */}
+          <div className='h-[3em] md:h-[4em] flex items-center justify-center md:justify-start'>
+            <p className='text-xl cursor-pointer hover:animate-[wiggle_0.30s_ease-in-out_infinite]' onClick={() => setContent('home')}>Hello👋!</p>
+            <hr className='hidden md:block border-white w-[4em] rotate-90 ml-4'/>
           </div>
 
-          <div className='h-[3em] md:h-[4em] md:w-[18em] flex justify-around md:justify-stretch flex-row px-1'>
-            <div className='flex w-full flex-row space-x-6 justify-evenly md:space-x-0'>
-              <div className='h-[3em] md:h-[4em] w-[4em] flex items-center justify-center'>
-                <p className='text-lg hover:underline cursor-pointer' onClick={() => setContent('Me')}>Me</p>
+          {/* Boutons de navigation centrés */}
+          <div className='h-[3em] md:h-[4em] flex justify-center md:justify-start items-center md:-ml-28'>
+            <div className='flex flex-row gap-6 md:gap-8'>
+              <div className='w-16 h-[3em] md:h-[4em] flex items-center justify-center'>
+                <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('Me')}>Me</p>
               </div>
-              <div className='h-[3em] md:h-[4em] w-[4em] flex items-center justify-center '>
-                <p className='text-lg hover:underline cursor-pointer' onClick={() => setContent('Project')}>Project</p>
+              <div className='w-20 h-[3em] md:h-[4em] flex items-center justify-center'>
+                <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('Project')}>Project</p>
               </div>
-              <div className='h-[3em] md:h-[4em] w-[4em] flex items-center justify-center'>
-                <p className='text-lg hover:underline cursor-pointer' onClick={() => setContent('Contact')}>Contact</p>
+              <div className='w-18 h-[3em] md:h-[4em] flex items-center justify-center'>
+                <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('Contact')}>Contact</p>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className='self-center md:self-auto md:mr-4 mt-4 md:mt-0'>
-          {error && <div className="text-red-500">{error}</div>}
-        
-          { profileImage ? (
-            <a href="https://github.com/4D4J" target='_blank'>
-            <img 
-              src={profileImage} 
-              alt="GitHub profile" 
-              className="w-[3em] md:w-[3.5em] h-[3em] md:h-[3.5em] rounded-full object-cover border-2 border-gray-200 shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
-            />
-            </a>
-          ) : (
-            <div className="w-0 h-0 bg-gray-200 animate-pulse rounded-full none"></div>
-          )}
+
+          {/* Photo GitHub à droite */}
+          <div className='h-[3em] md:h-[4em] flex items-center justify-center md:justify-end mt-4 md:mt-0'>
+            {error && <div className="text-red-500">{error}</div>}
+            { profileImage ? (
+              <a href="https://github.com/4D4J" target='_blank'>
+              <img 
+                src={profileImage} 
+                alt="GitHub profile" 
+                className="w-[3em] md:w-[3.5em] h-[3em] md:h-[3.5em] rounded-full object-cover border-2 border-gray-200 shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+              />
+              </a>
+            ) : (
+              <div className="w-0 h-0 bg-gray-200 animate-pulse rounded-full none"></div>
+            )}
+          </div>
         </div>
       </div>
 

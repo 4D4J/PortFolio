@@ -113,7 +113,7 @@ function Contact() {  const [formData, setFormData] = useState<FormData>({
   };  return (
     <div className="h-full w-full flex flex-col items-center justify-center p-4 sm:p-8">
       <div className="flex flex-col items-center sm:text-left mb-6 sm:mb-4">
-        <h1 className="text-xl sm:text-2xl mb-2 sm:mb-4">Contact Me Right now 🚀</h1>
+        <h1 className="text-xl sm:text-2xl mb-2 sm:mb-4">Contact Me Right now</h1>
       </div>
         <div className="w-[20rem] min-w-[10rem]">
         <form className="w-full mb-8" onSubmit={handleSubmit}>
