@@ -49,7 +49,7 @@ const projectCategories: ProjectCategory[] = [
       {
         name: 'Razm0x00',
         video: 'vid_Razm0x00.mp4',
-        description: 'Malware info-stealer write in C using DLL injection in Discord .'
+        description: 'Malware info-stealer write in C using DLL injection in Discord working with a Dropper write in C++.'
       }
     ]
   },
