@@ -1,8 +1,11 @@
 import styled from "styled-components"
-
-
+import usePageTitle from '../../hooks/usePageTitle';
 
 function Home(){
+  usePageTitle({ 
+    title: 'Accueil', 
+    description: 'Bienvenue sur le portfolio de Nathan Auvray (Rapido), développeur web et étudiant en cybersécurité. Explorez mes projets et compétences.' 
+  });
   
     return (
         <div className="flex flex-col items-center justify-center h-full w-full">
