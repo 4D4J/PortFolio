@@ -73,7 +73,7 @@ function Content() {
       <div className='flex flex-col md:flex-row md:h-[4em] w-full md:items-center justify-between pb-2 md:pb-[4em]'>
         {/* Navbar commune avec tous les éléments */}
         <div className='flex flex-col md:flex-row w-full md:items-center justify-between'>
-          {/* Hello à gauche */}
+          {/* Hello */}
           <div className='h-[3em] md:h-[4em] flex items-center justify-center md:justify-start'>
             <p className='text-xl cursor-pointer hover:animate-[wiggle_0.30s_ease-in-out_infinite]' onClick={() => setContent('home')}>Hello👋!</p>
             <hr className='hidden md:block border-white w-[4em] rotate-90 ml-4'/>
@@ -94,7 +94,7 @@ function Content() {
             </div>
           </div>
 
-          {/* Photo GitHub à droite */}
+          {/* Photo GitHub */}
           <div className='h-[3em] md:h-[4em] flex items-center justify-center md:justify-end mt-4 md:mt-0'>
             {error && <div className="text-red-500">{error}</div>}
             { profileImage ? (
@@ -118,8 +118,9 @@ function Content() {
           {content === 'Project' && <Project/>}
           {content === 'Contact' && <Contact/>}
         </div>
-      </div>      
+      </div>
     </div>
+    
   )
 }
 
