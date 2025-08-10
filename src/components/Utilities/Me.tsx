@@ -1,5 +1,12 @@
 
+import usePageTitle from '../../hooks/usePageTitle';
+
 function Me(){
+  usePageTitle({ 
+    title: 'À propos de moi', 
+    description: 'Découvrez Nathan Auvray (Rapido), développeur passionné de 18 ans étudiant en cybersécurité, développement web et hardware hacking.' 
+  });
+
   return (
       <div className="h-full w-full flex flex-col items-center justify-center p-4 sm:p-8 overflow-y-auto">
         <h1 className="text-left text-lg sm:text-2xl font-bold mb-4 w-full">

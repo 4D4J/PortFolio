@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react';
 import Modal from 'react-modal';
+import usePageTitle from '../../hooks/usePageTitle';
 
 interface Project {
   name: string;
@@ -71,6 +72,11 @@ const projectCategories: ProjectCategory[] = [
 ];
 
 const Project = () => {
+  usePageTitle({ 
+    title: 'Mes Projets', 
+    description: 'Découvrez mes projets en développement web, cybersécurité et autres. MindMapper, Muzikae, NReader et plus encore.' 
+  });
+
   const [currentCategory, setCurrentCategory] = useState(0);
   const [currentProject, setCurrentProject] = useState(0);
 

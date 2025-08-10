@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Card_Contact from "../UI/card_contact";
+import usePageTitle from '../../hooks/usePageTitle';
 
 interface FormData {
   name: string;
@@ -15,7 +16,13 @@ interface FormStatus {
   error: string;
 }
 
-function Contact() {  const [formData, setFormData] = useState<FormData>({
+function Contact() {  
+  usePageTitle({ 
+    title: 'Contact', 
+    description: 'Contactez Nathan Auvray pour discuter de projets, collaborations ou opportunités en développement web et cybersécurité.' 
+  });
+
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
