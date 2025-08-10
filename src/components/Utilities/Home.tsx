@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import usePageTitle from '../../hooks/usePageTitle';
+import Footer from "../UI/Footer";
 
 function Home(){
   usePageTitle({ 
@@ -8,13 +9,18 @@ function Home(){
   });
   
     return (
-        <div className="flex flex-col items-center justify-center h-full w-full">
-            <div>
+        <div className="flex flex-col items-center justify-between h-full w-full">
+            <div></div>
+            <div className="flex-1 flex items-center justify-center">
                 <StyledShining>
                     <p>Welcome to my Portfolio</p><p className="custom-text-size text-[15px]">I'm Nathan aka Rapido</p>
                 </StyledShining>
             </div>
+            <div style={{ fontSize: '0.75rem', transform: 'scale(0.7)' }}>
+                <Footer />
+            </div>
         </div>
+        
     )
 }
 

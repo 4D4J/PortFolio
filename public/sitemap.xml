@@ -21,26 +21,6 @@
   </url>
   
   <!-- Pages légales françaises -->
-  <url>
-    <loc>https://rapido-cyber.dev/legal-notice</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://rapido-cyber.dev/privacy-policy</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://rapido-cyber.dev/terms-of-service</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
   
   <!-- Pages légales anglaises -->
   <url>
