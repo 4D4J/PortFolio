@@ -14,40 +14,40 @@ interface FAQProps {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: "Who are you and what are you doing ?",
-    answer: "I'm Nathan aka Rapido. I'm a web developpeur and a cybersecurity student. I create modern web application and many other software, i also participate at CTF."
+    question: "Who are you and what do you do?",
+    answer: "I'm Nathan, aka Rapido. I'm a web developer and a cybersecurity student. I create modern web applications and various other software, and i also participate in CTF competitions."
   },
   {
     id: 2,
-    question: "What's you're skills ?",
-    answer: "I maitrise many technologies: React, TypeScript, Node.JS, Tailwindcss, Flutter for web and mobile applicatione; I also maitrise Python, C, C++, Java and Lua. I've many cybersecurity skills like Pentesting, Osint and i learn Forensic and Reverse Engineering, You can have a view of a peace of my project in the same section ."
+    question: "What are your skills?",
+    answer: "I use many technologies: React, TypeScript, Node.js, Tailwind CSS, Flutter for web and mobile applications. I also use Python, C, C++, Java and Lua. I have cybersecurity skills like Pentesting, OSINT, and i'm learning forensics and reverse engineering. You can view some of my projects in the Projects section."
   },
   {
     id: 3,
     question: "Can i download your CV?",
-    answer: "Of course ! My CV is downloadable in my PortFolio, You can find it in the Contact section or by contact me to have the latest version of my CV."
+    answer: "Of course! My CV is downloadable from my portfolio. You can find it in the Contact section or contact me to get the latest version of my CV."
   },
   {
     id: 4,
-    question: "Comment puis-je vous contacter ?",
-    answer: "Vous pouvez me contacter via la page contact de ce portfolio, ou directement par email. Je suis également présent sur LinkedIn et GitHub. N'hésitez pas à me contacter pour toute collaboration ou opportunité professionnelle."
+    question: "How can i contact you?",
+    answer: "You can contact me through the Contact page of this portfolio, or directly by email. I'm also present on LinkedIn and GitHub. Feel free to contact me for any collaboration or professional opportunity."
   },
   {
     id: 5,
-    question: "Travaillez-vous en freelance ?",
-    answer: "Oui, je suis ouvert aux missions freelance et aux projets intéressants. Que ce soit pour du développement web, des audits de sécurité, ou des projets spécifiques, n'hésitez pas à me proposer vos idées."
+    question: "Do you work as a freelancer?",
+    answer: "Yes, i'm open to freelance missions and interesting projects. Whether it's for web development, or specific projects, feel free to propose your ideas."
   },
   {
     id: 6,
-    question: "Quels types de projets réalisez-vous ?",
-    answer: "Je réalise principalement des applications web (sites vitrine, applications React, APIs), des outils de cybersécurité, et je participe à des challenges techniques. Vous pouvez voir mes réalisations dans la section projets."
+    question: "What types of projects do you work on?",
+    answer: "I mainly work on web applications (showcase websites, React applications, APIs), cybersecurity tools, and i participate in technical challenges. You can see my work in the Projects section."
   }
 ];
 
 function FAQ({ onNavigateToContact }: FAQProps = {}) {
   usePageTitle({ 
-    title: 'FAQ - Questions Fréquentes', 
-    description: 'Retrouvez les réponses aux questions les plus fréquemment posées me concernant.' 
+    title: 'FAQ - Frequently Asked Questions', 
+    description: 'Find answers to the most frequently asked questions about me.' 
   });
 
   const [openItem, setOpenItem] = useState<number | null>(null);
@@ -60,12 +60,9 @@ function FAQ({ onNavigateToContact }: FAQProps = {}) {
     <div className="h-full w-full flex flex-col p-4 sm:p-8 overflow-y-auto scrollbar-hide faq-container">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-white font-[Hack] uppercase tracking-[3px]">
+        <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-white uppercase tracking-[3px]">
           FAQ
         </h1>
-        <p className="text-gray-400 text-base sm:text-lg">
-          Questions fréquemment posées
-        </p>
       </div>
 
       {/* FAQ Items */}
@@ -112,7 +109,7 @@ function FAQ({ onNavigateToContact }: FAQProps = {}) {
             >
               <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                 <div className="border-t border-gray-700 pt-4">
-                  <p className="text-gray-300 leading-relaxed text-right text-sm sm:text-base">
+                  <p className="text-gray-300 leading-relaxed text-left text-sm sm:text-base">
                     {item.answer}
                   </p>
                 </div>
@@ -126,16 +123,16 @@ function FAQ({ onNavigateToContact }: FAQProps = {}) {
       <div className="text-center">
         <div className="border border-gray-700 rounded-lg bg-gray-900/30 p-4 sm:p-6">
           <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-            Vous ne trouvez pas votre réponse ?
+            Can't find your answer?
           </h3>
           <p className="text-gray-400 mb-4 text-sm sm:text-base">
-            N'hésitez pas à me contacter directement pour toute question spécifique.
+            Feel free to contact me directly for any specific questions.
           </p>
           <p
             onClick={onNavigateToContact}
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 cursor-pointer"
           >
-            Me contacter
+            Contact me
           </p>
         </div>
       </div>

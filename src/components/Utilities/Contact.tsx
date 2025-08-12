@@ -83,7 +83,7 @@ function Contact() {
     
     setStatus({ loading: true, success: false, error: '' });
       try {
-      // EmailJS configuration - Get these values from your EmailJS dashboard
+
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -101,7 +101,7 @@ function Contact() {
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
       
       setStatus({ loading: false, success: true, error: '' });
-        // Reset form after successful submission
+
       setFormData({
         name: '',
         email: '',
@@ -117,13 +117,11 @@ function Contact() {
         error: 'Failed to send message. Please try again later.' 
       });
     }
-  };  return (
+  };
+  return (
     <div className="h-full w-full flex flex-col items-center justify-center p-4 sm:p-8">
-      <div className="flex flex-col items-center sm:text-left mb-6 sm:mb-4">
-        <h1 className="text-xl sm:text-2xl mb-2 sm:mb-4">Contact Me Right now</h1>
-      </div>
-        <div className="w-[20rem] min-w-[10rem]">
-        <form className="w-full mb-8" onSubmit={handleSubmit}>
+      <div className="w-[20rem] min-w-[10rem]">
+        <form className="pt-24 w-full mb-8" onSubmit={handleSubmit}>
           <div className="mb-4">
             <input 
               type="text"
@@ -168,20 +166,7 @@ function Contact() {
               required
             />
           </div>
-          
-          {/* Status messages */}
-          {status.error && (
-            <div className="mb-4 p-2 bg-red-600 text-white rounded text-sm">
-              {status.error}
-            </div>
-          )}
-          
-          {status.success && (
-            <div className="mb-4 p-2 bg-green-600 text-white rounded text-sm">
-              Message sent successfully! I'll get back to you soon.
-            </div>
-          )}
-          
+
           <button 
             type="submit"
             disabled={status.loading}
@@ -193,10 +178,24 @@ function Contact() {
           >
             {status.loading ? 'Sending...' : 'Send Message'}
           </button>
+
+          <div className="mb-4 min-h-[3rem]">
+            {status.error && (
+              <div className="w-full p-2 bg-red-600 text-white rounded text-sm mb-2">
+                {status.error}
+              </div>
+            )}
+            
+            {status.success && (
+              <div className="w-full p-2 bg-green-600 text-white rounded text-sm mb-2">
+                Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+          </div>
         </form>
       </div>
 
-      <div className="w-full flex justify-center">
+      <div className="pb-12 w-full flex justify-center">
         <Card_Contact />
       </div>
 

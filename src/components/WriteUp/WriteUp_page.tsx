@@ -32,7 +32,7 @@ const WriteUp_page = () => {
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set());
 
   const navigate = useNavigate();
-  // Fonction pour remplacer les références d'images dans le markdown
+  // Function to replace image references in markdown
   const processMarkdown = (content: string) => {
     return content
       // Images chessgame (format standard markdown)
@@ -139,7 +139,7 @@ const WriteUp_page = () => {
     navigate('/');
   };
 
-  // Fonction pour obtenir l'image correspondante à la source spécifiée
+  // Function to get the corresponding image for the specified source
   const getImageSrc = (src: string) => {
     if (src === '/first-screen') return firstScreenImg;
     if (src === '/seconde-screen') return secondeScreenImg;

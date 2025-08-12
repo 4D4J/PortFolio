@@ -72,7 +72,7 @@ function Content() {
       <div className='h-auto max-h-full md:h-[40em] w-full md:w-[65em] max-w-[100vw] px-4 sm:px-0'>
         
       <div className='flex flex-col md:flex-row md:h-[4em] w-full md:items-center justify-between pb-2 md:pb-[4em]'>
-        {/* Navbar commune avec tous les éléments */}
+        {/* Common navbar with all elements */}
         <div className='flex flex-col md:flex-row w-full md:items-center justify-between'>
           {/* Hello */}
           <div className='h-[3em] md:h-[4em] flex items-center justify-center md:justify-start'>
@@ -80,7 +80,7 @@ function Content() {
             <hr className='hidden md:block border-white w-[4em] rotate-90 ml-4'/>
           </div>
 
-          {/* Boutons de navigation centrés */}
+          {/* Centered navigation buttons */}
           <div className='h-[3em] md:h-[4em] flex justify-center md:justify-start items-center md:-ml-28'>
             <div className='flex flex-row gap-6 md:gap-8'>
               <div className='w-16 h-[3em] md:h-[4em] flex items-center justify-center'>
@@ -89,11 +89,11 @@ function Content() {
               <div className='w-20 h-[3em] md:h-[4em] flex items-center justify-center'>
                 <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('Project')}>Project</p>
               </div>
-              <div className='w-18 h-[3em] md:h-[4em] flex items-center justify-center'>
-                <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('Contact')}>Contact</p>
-              </div>
               <div className='w-16 h-[3em] md:h-[4em] flex items-center justify-center'>
                 <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('FAQ')}>FAQ</p>
+              </div>
+              <div className='w-18 h-[3em] md:h-[4em] flex items-center justify-center'>
+                <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('Contact')}>Contact</p>
               </div>
             </div>
           </div>
@@ -120,8 +120,8 @@ function Content() {
           {content === 'home' && <Home/>}
           {content === 'Me' && <Me/>}
           {content === 'Project' && <Project/>}
-          {content === 'Contact' && <Contact/>}
           {content === 'FAQ' && <FAQ onNavigateToContact={() => setContent('Contact')} />}
+          {content === 'Contact' && <Contact/>}
         </div>
       </div>
     </div>
