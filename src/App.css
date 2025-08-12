@@ -14,6 +14,34 @@
   font-size: 10px;
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none !important;  
+  scrollbar-width: none !important;  /* Firefox */
+  overflow: -moz-scrollbars-none !important; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;  /* Safari and Chrome */
+  width: 0 !important;
+  height: 0 !important;
+}
+.scrollbar-hide::-webkit-scrollbar-track {
+  display: none !important;
+}
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  display: none !important;
+}
+
+.faq-container {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.faq-container::-webkit-scrollbar {
+  width: 0px !important;
+  background: transparent !important;
+  display: none !important;
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;

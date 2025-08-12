@@ -90,7 +90,7 @@ const Project = () => {
     setModalIsOpen(false);
   };
 
-  // Helpers pour obtenir les données du projet actuel
+  // Helpers to get current project data
   const getCurrentProjects = () => projectCategories[currentCategory].projects;
   const getCurrentProject = () => getCurrentProjects()[currentProject];
 
@@ -120,7 +120,7 @@ const Project = () => {
     };
 
     const handleTouchStart = (e: TouchEvent) => {
-      // Éviter le changement si on touche la modal ou le bouton d'info
+      // Avoid change if touching modal or info button
       const target = e.target as HTMLElement;
       if (target.closest('.modal-content') || target.closest('.info-button') || target.closest('.category-nav')) {
         return;
@@ -128,7 +128,7 @@ const Project = () => {
       changeProject();
     };
 
-    // Écouter les deux types d'événements sur tous les appareils
+    // Listen to both types of events on all devices
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('touchstart', handleTouchStart);
 
@@ -141,7 +141,7 @@ const Project = () => {
   return (
     <div className="h-full w-full flex flex-col items-center justify-center p-4 sm:p-8">
       
-      {/* Navigation des catégories */}
+      {/* Categories navigation */}
       <div className="mb-4 flex flex-wrap justify-center gap-2 category-nav">
         {projectCategories.map((category, index) => (
           <button
