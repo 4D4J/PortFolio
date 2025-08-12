@@ -3,6 +3,7 @@ import Home from './Utilities/Home';
 import Me from './Utilities/Me';
 import Project from './Utilities/Project';
 import Contact from './Utilities/Contact';
+import FAQ from './Utilities/FAQ';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -91,6 +92,9 @@ function Content() {
               <div className='w-18 h-[3em] md:h-[4em] flex items-center justify-center'>
                 <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('Contact')}>Contact</p>
               </div>
+              <div className='w-16 h-[3em] md:h-[4em] flex items-center justify-center'>
+                <p className='text-lg hover:underline cursor-pointer text-center' onClick={() => setContent('FAQ')}>FAQ</p>
+              </div>
             </div>
           </div>
 
@@ -117,6 +121,7 @@ function Content() {
           {content === 'Me' && <Me/>}
           {content === 'Project' && <Project/>}
           {content === 'Contact' && <Contact/>}
+          {content === 'FAQ' && <FAQ onNavigateToContact={() => setContent('Contact')} />}
         </div>
       </div>
     </div>
